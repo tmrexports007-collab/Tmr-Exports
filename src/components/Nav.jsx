@@ -7,12 +7,12 @@ const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Our Mission', href: '/mission' },
-    { name: 'Product', href: '/product' },
-    { name: 'Quality', href: '/quality' },
-    { name: 'Why Choose Us', href: '/why-choose-us' },
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Our Mission', href: '#mission' },
+    { name: 'Product', href: '#product' },
+    { name: 'Quality', href: '#quality' },
+    { name: 'Why Choose Us', href: '#why-choose-us' },
   ];
 
   // Specific Brand Colors based on your request
@@ -50,7 +50,7 @@ const Nav = () => {
         <div className="hidden lg:flex items-center gap-5">
           <div className="flex items-center gap-2.5 border border-gray-200 px-4 py-2 rounded-lg text-gray-800">
             <FaHeadset className={brandBlue} />
-            <span className="text-sm font-semibold">+91 98578474975</span>
+            <span className="text-sm font-semibold">+91 123456789</span>
           </div>
 
           <button className={`${brandBgBlue} text-white px-6 py-3 rounded-lg flex items-center gap-2.5 font-semibold hover:opacity-90 transition-all active:scale-95`}>
