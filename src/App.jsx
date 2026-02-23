@@ -83,7 +83,7 @@ const App = () => {
           marginBottom: '4px',
           wordBreak: 'break-word'
         }}>
-          TMR <span style={{ fontStyle: 'italic', color: '#c8973e' }}>Agro Marine</span>  Exports
+          TMR Agro Marine Exports
         </h1>
  
         <p className="f2" style={{
