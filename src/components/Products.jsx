@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import basmathi from "../assets/basmathi.jpg"
 import ponni from "../assets/ponni.jpg"
 import nonbasmathi from "../assets/nonbasmathi.jpg"
+import sonamasuri from "../assets/sonamasuri.jpg"
 // Subtle Counter for a touch of life without being "flashy"
 const Counter = ({ value }) => {
   const count = useMotionValue(0);
@@ -21,7 +22,7 @@ const Products = () => {
       id: 1,
       name: "Sona Masuri",
       desc: "Lightweight, aromatic, and low in starch. The gold standard for daily healthy consumption.",
-      image: "https://i.pinimg.com/736x/86/96/53/869653d6ac5f78567672f63738ef717b.jpg",
+      image: sonamasuri,
     },
     {
       id: 2,
