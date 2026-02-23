@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from 'react'
- 
+
 const App = () => {
   const [time, setTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
- 
+
   useEffect(() => {
     const target = new Date()
-    // Set target to March 15 of current year
-    target.setMonth(2) // March is month 2 (0-indexed)
+    target.setMonth(2)
     target.setDate(15)
-    target.setHours(0, 0, 0, 0) // Set to midnight
-    
-    // If March 15 has passed this year, set to next year
+    target.setHours(0, 0, 0, 0)
     if (target < new Date()) {
       target.setFullYear(target.getFullYear() + 1)
     }
-    
+
     const interval = setInterval(() => {
       const diff = target - new Date()
       if (diff <= 0) {
@@ -31,7 +28,7 @@ const App = () => {
     }, 1000)
     return () => clearInterval(interval)
   }, [])
- 
+
   return (
     <div style={{
       minHeight: '100vh',
@@ -44,77 +41,78 @@ const App = () => {
       padding: '16px'
     }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Outfit:wght@300;400&display=swap%27);
-        @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-        .f1 { animation: fadeUp 0.8s ease 0.1s both; }
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Outfit:wght@300;400&display=swap');
+
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .f1 { animation: fadeUp 0.8s ease 0.1s  both; }
         .f2 { animation: fadeUp 0.8s ease 0.35s both; }
-        .f3 { animation: fadeUp 0.8s ease 0.6s both; }
+        .f3 { animation: fadeUp 0.8s ease 0.6s  both; }
         .f4 { animation: fadeUp 0.8s ease 0.85s both; }
-        
-        /* Mobile-specific styles */
-        @media (max-width: 480px) {
-          .timer-container {
-            gap: 0px !important;
-            margin-bottom: 40px !important;
-            flex-wrap: wrap !important;
-            justify-content: center !important;
-          }
-          .timer-item {
-            padding: 12px 12px !important;
-            min-width: 60px !important;
-          }
+
+        .brand-title {
+          font-size: clamp(32px, 9vw, 96px);
+          font-weight: 300;
+          letter-spacing: -0.02em;
+          line-height: 1.05;
+          margin: 0 0 4px;
+          word-break: break-word;
+          overflow-wrap: break-word;
+          hyphens: auto;
+          /* Fluid sizing that never overflows its container */
+          width: 100%;
+        }
+
+        /* On very narrow screens shrink even further */
+        @media (max-width: 360px) {
+          .brand-title { font-size: 28px; }
+        }
+
+        .timer-container {
+          display: flex;
+          justify-content: center;
+          gap: clamp(0px, 2vw, 2px);
+          margin-bottom: clamp(32px, 8vw, 52px);
+          flex-wrap: wrap;
+        }
+
+        .timer-item {
+          padding: clamp(12px, 3vw, 18px) clamp(12px, 4vw, 20px);
+          min-width: clamp(60px, 18vw, 72px);
+          border-top: 1px solid rgba(200,151,62,0.3);
+          flex: 0 1 auto;
         }
       `}</style>
- 
+
       <div style={{
         textAlign: 'center',
         padding: '20px 16px',
         maxWidth: '600px',
-        width: '100%'
+        width: '100%',
+        boxSizing: 'border-box'
       }}>
- 
-        
- 
-        <h1 className="f2" style={{
-          fontSize: 'clamp(42px, 15vw, 96px)',
-          fontWeight: 300,
-          letterSpacing: '-0.02em',
-          lineHeight: 1,
-          marginBottom: '4px',
-          wordBreak: 'break-word'
-        }}>
-          TMR Agro Marine Exports
+
+        <h1 className="f2 brand-title">
+          TMR Agro<br />Marine Exports
         </h1>
- 
+
         <p className="f2" style={{
           fontFamily: "'Outfit', sans-serif",
-          fontSize: 'clamp(11px, 3.5vw, 13px)',
+          fontSize: 'clamp(10px, 3vw, 13px)',
           letterSpacing: '0.18em',
           textTransform: 'uppercase',
           color: 'rgba(240,230,208,0.35)',
           marginBottom: 'clamp(32px, 8vw, 52px)',
-          whiteSpace: 'nowrap',
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
           padding: '0 8px'
         }}>
           Premium Rice Exports · Worldwide
         </p>
- 
-        <div className="f3 timer-container" style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: 'clamp(0px, 2vw, 2px)',
-          marginBottom: 'clamp(32px, 8vw, 52px)',
-          flexWrap: 'wrap'
-        }}>
+
+        <div className="f3 timer-container">
           {Object.entries(time).map(([unit, val]) => (
-            <div key={unit} className="timer-item" style={{
-              padding: 'clamp(12px, 3vw, 18px) clamp(12px, 4vw, 20px)',
-              minWidth: 'clamp(60px, 18vw, 72px)',
-              borderTop: '1px solid rgba(200,151,62,0.3)',
-              flex: '0 1 auto'
-            }}>
+            <div key={unit} className="timer-item">
               <div style={{
                 fontSize: 'clamp(24px, 8vw, 44px)',
                 fontWeight: 300,
@@ -136,7 +134,7 @@ const App = () => {
             </div>
           ))}
         </div>
- 
+
         <p className="f4" style={{
           fontFamily: "'Outfit', sans-serif",
           fontSize: 'clamp(11px, 3.5vw, 13px)',
@@ -147,10 +145,10 @@ const App = () => {
         }}>
           Launching Soon
         </p>
- 
+
       </div>
     </div>
   )
 }
- 
+
 export default App
