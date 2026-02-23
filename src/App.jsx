@@ -1,14 +1,27 @@
 import React, { useState, useEffect } from 'react'
  
 const App = () => {
-  const [time, setTime] = useState({ days: 30, hours: 0, minutes: 0, seconds: 0 })
+  const [time, setTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
  
   useEffect(() => {
     const target = new Date()
-    target.setDate(target.getDate() + 30)
+    // Set target to March 15 of current year
+    target.setMonth(2) // March is month 2 (0-indexed)
+    target.setDate(15)
+    target.setHours(0, 0, 0, 0) // Set to midnight
+    
+    // If March 15 has passed this year, set to next year
+    if (target < new Date()) {
+      target.setFullYear(target.getFullYear() + 1)
+    }
+    
     const interval = setInterval(() => {
       const diff = target - new Date()
-      if (diff <= 0) return clearInterval(interval)
+      if (diff <= 0) {
+        clearInterval(interval)
+        setTime({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+        return
+      }
       setTime({
         days: Math.floor(diff / 86400000),
         hours: Math.floor((diff / 3600000) % 24),
