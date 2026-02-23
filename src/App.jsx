@@ -73,20 +73,7 @@ const App = () => {
         width: '100%'
       }}>
  
-        <div className="f1" style={{
-          fontFamily: "'Outfit', sans-serif",
-          fontSize: 'clamp(9px, 3vw, 11px)',
-          letterSpacing: '0.3em',
-          textTransform: 'uppercase',
-          color: 'rgba(200,151,62,0.7)',
-          marginBottom: 'clamp(16px, 5vw, 24px)',
-          whiteSpace: 'nowrap',
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
-          padding: '0 8px'
-        }}>
-          Nellore · Andhra Pradesh · India
-        </div>
+        
  
         <h1 className="f2" style={{
           fontSize: 'clamp(42px, 15vw, 96px)',
@@ -96,7 +83,7 @@ const App = () => {
           marginBottom: '4px',
           wordBreak: 'break-word'
         }}>
-          TMR <span style={{ fontStyle: 'italic', color: '#c8973e' }}>Agro</span>
+          TMR <span style={{ fontStyle: 'italic', color: '#c8973e' }}>Agro Marine</span>  Exports
         </h1>
  
         <p className="f2" style={{
