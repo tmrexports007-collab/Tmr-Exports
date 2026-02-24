@@ -9,10 +9,11 @@ const Nav = () => {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Our Mission', href: '#mission' },
+    { name: 'OurMission', href: '#mission' },
     { name: 'Product', href: '#product' },
     { name: 'Quality', href: '#quality' },
-    { name: 'Why Choose Us', href: '#why-choose-us' },
+    { name: 'WhyChooseUs', href: '#why-choose-us' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   // Specific Brand Colors based on your request
@@ -36,8 +37,8 @@ const Nav = () => {
             <a 
               key={link.name} 
               href={link.href}
-              className={`text-sm font-medium flex items-center hover:text-red-700 transition-colors hover:opacity-70 ${
-                index === 0 ? 'text-red-700' : 'text-gray-600'
+              className={`text-sm font-medium flex items-center hover:text-blue-950 transition-colors hover:opacity-70 ${
+                index === 0 ? 'text-blue-950' : 'text-gray-600'
               }`}
             >
               {index === 0 && <span className="mr-1.5 text-[8px]">●</span>}
@@ -48,14 +49,20 @@ const Nav = () => {
 
         {/* 3. Right Action Section */}
         <div className="hidden lg:flex items-center gap-5">
-          <div className="flex items-center gap-2.5 border border-gray-200 px-4 py-2 rounded-lg text-gray-800">
+          {/* <div className="flex items-center gap-2.5 border border-gray-200 px-4 py-2 rounded-lg text-gray-800">
             <FaHeadset className={brandBlue} />
             <span className="text-sm font-semibold">+91 123456789</span>
-          </div>
+          </div> */}
 
-          <button className={`${brandBgBlue} text-white px-6 py-3 rounded-lg flex items-center gap-2.5 font-semibold hover:opacity-90 transition-all active:scale-95`}>
-            Contact <FaArrowRight size={14} />
-          </button>
+            {/* Changed from <button> to <a> */}
+  <a 
+    href="#contact" 
+    className={`bg-blue-950 text-white px-6 py-3 rounded-lg flex items-center gap-2.5 font-semibold hover:opacity-90 transition-all active:scale-95`}
+  >
+    Contact <FaArrowRight size={14} />
+  </a>
+
+          
         </div>
 
         {/* Mobile Toggle Button */}
@@ -102,10 +109,7 @@ const Nav = () => {
                   </a>
                 ))}
                 
-                <div className="mt-4 p-4 bg-gray-50 rounded-xl flex items-center gap-3">
-                  <FaHeadset className={brandBlue} />
-                  <span className="text-sm font-bold text-gray-700">+91 98578474975</span>
-                </div>
+
               </div>
               
               <div className="mt-auto text-[10px] text-gray-400 uppercase tracking-widest">

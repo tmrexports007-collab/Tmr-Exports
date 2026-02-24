@@ -26,8 +26,9 @@ const OurMission = () => {
     },
   ];
 
+
   return (
-    <div className="bg-white min-h-screen font-serif text-[#1A1A1A]">
+    <div id='mission' className="bg-white min-h-screen font-serif text-[#1A1A1A]">
       
       {/* --- VISION SECTION --- */}
       <section className="max-w-7xl mx-auto py-24 px-6">
