@@ -1,5 +1,4 @@
-
- import React from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Check, Target, Zap, Shield, Globe } from 'lucide-react';
 
@@ -27,8 +26,9 @@ const OurMission = () => {
     },
   ];
 
+
   return (
-    <div id="mission" className="bg-white min-h-screen font-serif text-[#1A1A1A]">
+    <div id='mission' className="bg-white min-h-screen font-serif text-[#1A1A1A]">
       
       {/* --- VISION SECTION --- */}
       <section className="max-w-7xl mx-auto py-24 px-6">
@@ -36,7 +36,7 @@ const OurMission = () => {
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
             <span className="text-[#C5A059] uppercase tracking-[0.4em] text-[10px] font-bold">The Future</span>
@@ -51,7 +51,7 @@ const OurMission = () => {
           <motion.div 
              initial={{ opacity: 0, scale: 0.95 }}
              whileInView={{ opacity: 1, scale: 1 }}
-             viewport={{ once: false }}
+             viewport={{ once: true }}
              transition={{ duration: 1.2 }}
              className="relative h-[400px] bg-gray-50 overflow-hidden group"
           >
@@ -78,7 +78,7 @@ const OurMission = () => {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.8 }}
                 className="group"
               >
@@ -100,7 +100,7 @@ const OurMission = () => {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           className="max-w-3xl mx-auto border border-gray-100 p-12"
         >
           <h3 className="uppercase tracking-[0.3em] text-[10px] text-gray-400 mb-6">Our Promise</h3>

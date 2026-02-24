@@ -1,98 +1,119 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GiCheckedShield, GiFactory, GiTruck, GiFarmer, GiFiles } from 'react-icons/gi';
+import { ShieldCheck, Factory, Truck, MapPin, FileText, Target } from 'lucide-react';
 
 const WhyChooseUs = () => {
-  const features = [
+  const advantages = [
     {
       title: "Consistent Quality",
-      desc: "Every batch undergoes rigorous testing for grain length and aroma.",
-      icon: <GiCheckedShield />,
+      desc: "Rigorous testing for grain length and aroma in every batch.",
+      icon: <ShieldCheck className="w-6 h-6" />,
     },
     {
       title: "Modern Processing",
       desc: "State-of-the-art milling preserves nutritional value and purity.",
-      icon: <GiFactory />,
+      icon: <Factory className="w-6 h-6" />,
     },
     {
       title: "On-time Delivery",
       desc: "Optimized logistics ensuring reliable global shipping schedules.",
-      icon: <GiTruck />,
+      icon: <Truck className="w-6 h-6" />,
     },
     {
       title: "Farmer Network",
       desc: "Sourced directly from fertile Nellore belts for fresh harvests.",
-      icon: <GiFarmer />,
+      icon: <MapPin className="w-6 h-6" />,
     },
     {
       title: "Export Compliance",
       desc: "Expert handling of documentation for seamless customs clearance.",
-      icon: <GiFiles />,
+      icon: <FileText className="w-6 h-6" />,
+    },
+    {
+      title: "Direct Sourcing",
+      desc: "Removing intermediaries to ensure fair pricing and freshness.",
+      icon: <Target className="w-6 h-6" />,
     },
   ];
 
- 
-  const duplicatedFeatures = [...features, ...features];
+  // Duplicate for seamless loop
+  const duplicatedAdvantages = [...advantages, ...advantages];
 
   return (
-    <section  id="why-choose-us" className="py-20  overflow-hidden ">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-12">
-        <div className="text-center">
-          <h3 className="text-[#0535a4] font-bold uppercase tracking-widest text-sm mb-2">Our Advantages</h3>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#004d2c]">Why Choose TMR Agro?</h2>
+    <div id='why-choose-us' className="bg-white py-24 font-serif text-[#1A1A1A] overflow-hidden">
+      
+      {/* --- HEADER SECTION --- */}
+      <section className="max-w-7xl mx-auto px-6 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="text-[#C5A059] uppercase tracking-[0.4em] text-[10px] font-bold">The TMR Standard</span>
+            <h2 className="text-4xl md:text-5xl font-light italic mt-4 text-[#0A2540]">Why Choose TMR Agro?</h2>
+          </motion.div>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="text-gray-500 font-sans font-light leading-relaxed border-l border-gray-200 pl-6"
+          >
+            Bridging the gap between local tradition and global demand through 
+            modern processing and transparent sourcing.
+          </motion.p>
         </div>
-      </div>
+      </section>
 
-      {/*  Marquee Containter */}
-      <div className=" hidden relative md:flex overflow-hidden">
+      {/* --- INFINITE LOOP SECTION --- */}
+      <div className="relative flex items-center">
+        {/* Optional Gradient Overlays for "Fade" effect at edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-white to-transparent hidden md:block" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-white to-transparent hidden md:block" />
+
         <motion.div
-          className="flex gap-8 px-4"
+          className="flex gap-8"
           animate={{
-            x: [0, -1300],
+            x: [0, -1920], // Adjust based on total width of one set
           }}
           transition={{
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 25, 
+              duration: 35, 
               ease: "linear",
             },
           }}
         >
-          {duplicatedFeatures.map((feature, index) => (
+          {duplicatedAdvantages.map((item, index) => (
             <div
               key={index}
-             className="bg-white cursor-pointer p-6 shadow-lg border-b-4 border-[rgb(17,17,154)]  hover:border-[rgb(212,28,28)] transition-all duration-300 rounded-xl w-64 shrink-0 flex flex-col items-center text-center">
-              <div className="text-[rgb(17,17,154)] text-center justify-center flex text-5xl mb-6">
-                {feature.icon}
+              className="group w-[350px] shrink-0 bg-[#FCFAF5] p-10 border border-transparent hover:border-[#C5A059]/30 transition-all duration-500"
+            >
+              <div className="text-[#C5A059] mb-8 inline-block pb-2 border-b border-transparent group-hover:border-[#C5A059] transition-all duration-500">
+                {item.icon}
               </div>
-              <h4 className="text-[#004d2c] text-xl font-bold mb-3">
-                {feature.title}
-              </h4>
-              <p className="text-gray-600  leading-relaxed text-sm">
-                {feature.desc}
+              <h3 className="text-xl font-medium text-[#0A2540] mb-4 uppercase tracking-wider">{item.title}</h3>
+              <p className="text-gray-500 text-sm leading-relaxed font-sans font-light">
+                {item.desc}
               </p>
             </div>
           ))}
         </motion.div>
- 
-      
       </div>
-      
-       {/* Mobile View */}
-      <div className="flex flex-col items-center gap-8 px-6 md:hidden">
-        {features.map((feature, index) => (
-          <div
-            key={`mobile-${index}`}
-            className="bg-white p-6 shadow-md border-b-4 border-[rgb(17,17,154)] rounded-xl w-full max-w-[320px] flex flex-col items-center text-center"
-          >
-            <div className="text-[rgb(17,17,154)] text-5xl mb-4">{feature.icon}</div>
-            <h4 className="text-[#004d2c] text-lg font-bold mb-2">{feature.title}</h4>
-            <p className="text-gray-600 text-sm leading-relaxed">{feature.desc}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+
+      {/* --- BOTTOM PROMISE --- */}
+      <section className="mt-24 text-center px-6">
+        <div className="max-w-2xl mx-auto">
+          <div className="w-12 h-[1px] bg-[#C5A059] mx-auto mb-8" />
+          <p className="text-lg italic font-light text-gray-400 font-serif">
+            "Ensuring every harvest meets the highest standards of the TMR legacy."
+          </p>
+        </div>
+      </section>
+    </div>
   );
 };
 
