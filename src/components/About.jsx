@@ -56,7 +56,7 @@ const About = () => {
 
           
             <div className="pt-8">
-              <button className="bg-[#004d2c] text-white rounded-md px-12 py-4 font-bold uppercase tracking-widest hover:bg-red-700 transition-all duration-300">
+              <button className="bg-[#004d2c] text-white rounded-md px-12 py-4 font-bold uppercase cursor-pointer  tracking-widest hover:bg-red-700 transition-colors duration-300">
                 Know More
               </button>
             </div>
@@ -69,7 +69,7 @@ const About = () => {
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-            
+              viewport={{ once:false }}
               transition={{ duration: 1 }}
               className="relative w-full h-full p-6 flex justify-center items-center"
             >

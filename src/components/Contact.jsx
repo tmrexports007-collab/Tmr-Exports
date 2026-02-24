@@ -33,11 +33,13 @@ const Contact = () => {
               className="relative z-10 flex flex-col items-center justify-center text-center p-8"
             >
             
-<div className="absolute inset-0 z-0 pointer-events-none">
+
+{/* Background Icon Aligned with Navbar - Responsive Fix */}
+<div className="absolute inset-0 z-0 pointer-events-none ">
   <div className="max-w-7xl mx-auto px-6 lg:px-8 h-full relative">
     <FaPhoneAlt 
-      size={380} 
-      className="absolute left-6 lg:-left-2 top-1/2 -translate-y-1/2 text-white opacity-20 -rotate-12" 
+      // size is now smaller (250) on mobile and bigger (380) on desktop
+      className="absolute left-6 lg:left-8 top-1/2 -translate-y-1/2 text-white opacity-20 -rotate-12 w-64 h-64 md:w-95 md:h-95" 
     />
   </div>
 </div>
