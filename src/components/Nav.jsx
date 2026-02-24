@@ -5,7 +5,8 @@ import logo from '../assets/logo.jpeg';
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [activeSection, setActiveSection] = useState('home');
+  const isManualScroll = React.useRef(false);
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
@@ -16,13 +17,38 @@ const Nav = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+
+
+ React.useEffect(() => {
+  const handleScroll = () => {
+    if (isManualScroll.current) return;
+   
+    const sections = navLinks.map(link => link.href.replace('#', ''));
+    
+    for (const id of sections) {
+      const element = document.getElementById(id);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+       
+        if (rect.top <= 150 && rect.bottom >= 150) {
+          setActiveSection(id);
+        }
+      }
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, [[navLinks, isManualScroll]]);
+
+
   // Specific Brand Colors based on your request
   const brandBlue = 'text-[#000033]';
   const brandBgBlue = 'bg-[#C00707]';
   const brandGreen = 'text-[#002200]';
 
   return (
-    <nav className="bg-white border-b border-gray-200 sticky top-0 z-[1000] font-sans">
+    <nav className="bg-white border-b border-gray-200 sticky top-0 z-1000 ">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-[90px]">
         
         {/* 1. Logo Section */}
@@ -31,32 +57,67 @@ const Nav = () => {
        <img src={logo} alt="TMR Exports Logo" className="h-20 w-20 object-cover rounded-full" />
         </div>
 
+       
         {/* 2. Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link, index) => (
-            <a 
-              key={link.name} 
-              href={link.href}
-              className={`text-sm font-medium flex items-center hover:text-blue-950 transition-colors hover:opacity-70 ${
-                index === 0 ? 'text-blue-950' : 'text-gray-600'
-              }`}
-            >
-              {index === 0 && <span className="mr-1.5 text-[8px]">●</span>}
-              {link.name}
-            </a>
-          ))}
-        </div>
+<div className="hidden lg:flex items-center gap-8">
+  {navLinks.map((link) => {
+   
+    const isActive = activeSection === link.href.replace('#', '');
 
+    return (
+      <a 
+        key={link.name} 
+        href={link.href}
+       
+       onClick={() => {
+  
+  setActiveSection(link.href.replace('#', ''));
+  
+ 
+  isManualScroll.current = true;
+  
+ 
+  setTimeout(() => {
+    isManualScroll.current = false;
+  }, 1000);
+}}
+        className={`text-sm font-medium flex items-center transition-colors duration-200 ${
+          isActive ? 'text-blue-950 font-bold' : 'text-gray-600 hover:text-blue-950'
+        }`}
+      >
+       
+        <AnimatePresence mode="wait">
+          {isActive && (
+            <motion.span 
+              key="dot"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0 }}
+              transition={{ duration: 0.1 }} 
+              className="mr-1.5 text-[8px] text-blue-950"
+            >
+              ●
+            </motion.span>
+          )}
+        </AnimatePresence>
+        {link.name}
+      </a>
+    );
+  })}
+</div>
+
+
+     
         {/* 3. Right Action Section */}
         <div className="hidden lg:flex items-center gap-5">
-          {/* <div className="flex items-center gap-2.5 border border-gray-200 px-4 py-2 rounded-lg text-gray-800">
-            <FaHeadset className={brandBlue} />
-            <span className="text-sm font-semibold">+91 123456789</span>
-          </div> */}
-
-            {/* Changed from <button> to <a> */}
+         
   <a 
     href="#contact" 
+  onClick={() => {
+    setActiveSection('contact');
+    isManualScroll.current = true;
+    setTimeout(() => { isManualScroll.current = false; }, 1000);
+  }}
     className={`bg-blue-950 text-white px-6 py-3 rounded-lg flex items-center gap-2.5 font-semibold hover:opacity-90 transition-all active:scale-95`}
   >
     Contact <FaArrowRight size={14} />
@@ -124,3 +185,11 @@ const Nav = () => {
 };
 
 export default Nav;
+
+
+
+
+
+
+
+

@@ -5,17 +5,37 @@ import basmathi from "../assets/basmathi.jpg"
 import ponni from "../assets/ponni.jpg"
 import nonbasmathi from "../assets/nonbasmathi.jpg"
 import sonamasuri from "../assets/sonamasuri.jpg"
-// Subtle Counter for a touch of life without being "flashy"
+
+import { useInView } from "framer-motion"; 
+import { useRef } from "react"; 
+
 const Counter = ({ value }) => {
+  const ref = useRef(null);
+  
+  const isInView = useInView(ref, { once: false, amount: 0.5 });
+  
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
-  useEffect(() => {
-    const controls = animate(count, parseInt(value), { duration: 2, ease: "circOut" });
-    return controls.stop;
-  }, [value, count]);
-  return <motion.span>{rounded}</motion.span>;
-};
 
+  useEffect(() => {
+    if (isInView) {
+     
+      animate(count, parseInt(value), { duration: 2, ease: "circOut" });
+    } else {
+      
+      count.set(0);
+    }
+  }, [isInView, value, count]);
+
+  return (
+    <motion.span
+      ref={ref} 
+      style={{ display: "inline-block", minWidth: "2ch" }}
+    >
+      {rounded}
+    </motion.span>
+  );
+};
 const Products = () => {
   const riceVarieties = [
     {
@@ -58,8 +78,9 @@ const Products = () => {
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <motion.img
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+           whileInView={{ opacity: 1 }}
           transition={{ duration: 2 }}
+           viewport={{ once: false,  amount: 0.2}}
           className="absolute inset-0 w-full h-full object-cover grayscale-[20%]"
           src="https://i.pinimg.com/1200x/fe/8f/93/fe8f93d900be9068f862f1745e9aa18f.jpg"
         />
@@ -68,8 +89,8 @@ const Products = () => {
         <div className="relative z-10 text-center text-white px-6">
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2 }}
              viewport={{ once: false }}
             className="uppercase tracking-[0.5em] text-xs mb-4 text-[#C5A059]"
              
@@ -78,18 +99,18 @@ const Products = () => {
           </motion.p>
           <motion.h1 
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 1.5 }}
-             viewport={{ once: false }}
+             whileInView={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 1.5 }}
+             viewport={{ once: false, amount: 0.2 }}
             className="text-5xl md:text-7xl font-light italic tracking-tight"
           >
             The Soul of Our Grains
           </motion.h1>
           <motion.div 
              initial={{ width: 0 }}
-             animate={{ width: "100px" }}
-             transition={{ delay: 1.5, duration: 1 }}
-              viewport={{ once: false }}
+              whileInView={{ width: "100px" }}
+             transition={{ delay: 1.2, duration: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
              className="h-[1px] bg-[#C5A059] mx-auto mt-8"
           />
         </div>
@@ -129,7 +150,7 @@ const Products = () => {
               key={rice.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.2 }}
               transition={{ delay: index * 0.1 }}
               className="flex flex-col sm:flex-row gap-8 items-center group cursor-pointer"
             >
@@ -150,22 +171,7 @@ const Products = () => {
         </div>
       </section>
 
-      {/* --- ELEGANT FOOTER QUOTE --- */}
-      {/* <section className="bg-[#0A2540] py-24 text-center text-white">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="max-w-2xl mx-auto px-6"
-        >
-          <span className="text-[#C5A059] text-4xl font-serif">“</span>
-          <h2 className="text-2xl md:text-3xl font-light italic mb-8">
-            Quality is the silent language of our heritage.
-          </h2>
-          <button className="border border-[#C5A059] text-[#C5A059] px-10 py-3 text-[10px] uppercase tracking-[0.3em] hover:bg-[#C5A059] hover:text-white transition-all">
-            Inquire for Export
-          </button>
-        </motion.div>
-      </section> */}
+  
 
     </div>
   );

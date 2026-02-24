@@ -10,11 +10,14 @@ import OurMission from './components/OurMission'
 import Quality from './components/Quality'
 
 const App = () => {
+ 
   return (
     <div className='font-serif bg-white'>
-      <Nav/>
-      <Home id="home"/>
-      <About id="about"/>
+     <Nav/>
+      <Home id="home"/> 
+     
+      <About id="about"/> 
+    
       <OurMission id="mission"/>
       <Products id="product"/>
       <Quality id="quality"/>

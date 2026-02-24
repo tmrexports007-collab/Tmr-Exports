@@ -36,8 +36,9 @@ const OurMission = () => {
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+           
           >
             <span className="text-[#C5A059] uppercase tracking-[0.4em] text-[10px] font-bold">The Future</span>
             <h2 className="text-4xl md:text-5xl font-light italic mt-4 mb-8 text-[#0A2540]">Our Vision</h2>
@@ -51,8 +52,8 @@ const OurMission = () => {
           <motion.div 
              initial={{ opacity: 0, scale: 0.95 }}
              whileInView={{ opacity: 1, scale: 1 }}
-             viewport={{ once: true }}
-             transition={{ duration: 1.2 }}
+             viewport={{ once: false, amount: 0.2 }}
+               transition={{ delay: 1, duration: 0.8 }}
              className="relative h-[400px] bg-gray-50 overflow-hidden group"
           >
             <img 
@@ -78,7 +79,7 @@ const OurMission = () => {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.2 }}
                 transition={{ delay: index * 0.1, duration: 0.8 }}
                 className="group"
               >
@@ -100,7 +101,7 @@ const OurMission = () => {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.2 }}
           className="max-w-3xl mx-auto border border-gray-100 p-12"
         >
           <h3 className="uppercase tracking-[0.3em] text-[10px] text-gray-400 mb-6">Our Promise</h3>

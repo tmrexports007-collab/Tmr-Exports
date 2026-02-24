@@ -36,20 +36,19 @@ const WhyChooseUs = () => {
     },
   ];
 
-  // Duplicate for seamless loop
   const duplicatedAdvantages = [...advantages, ...advantages];
 
   return (
     <div id='why-choose-us' className="bg-white py-24 font-serif text-[#1A1A1A] overflow-hidden">
       
-      {/* --- HEADER SECTION --- */}
+      {/* Header */}
       <section className="max-w-7xl mx-auto px-6 mb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: false,amount:0.2 }}
+           transition={{ duration: 1.2, ease: "easeOut" }}
           >
             <span className="text-[#C5A059] uppercase tracking-[0.4em] text-[10px] font-bold">The TMR Standard</span>
             <h2 className="text-4xl md:text-5xl font-light italic mt-4 text-[#0A2540]">Why Choose TMR Agro?</h2>
@@ -57,8 +56,8 @@ const WhyChooseUs = () => {
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.8 }}
+            viewport={{ once: false,amount:0.2}}
+            transition={{ delay: 1.2, duration: 0.8 }}
             className="text-gray-500 font-sans font-light leading-relaxed border-l border-gray-200 pl-6"
           >
             Bridging the gap between local tradition and global demand through 
@@ -67,16 +66,16 @@ const WhyChooseUs = () => {
         </div>
       </section>
 
-      {/* --- INFINITE LOOP SECTION --- */}
+      {/* Marquee Section*/}
       <div className="relative flex items-center">
-        {/* Optional Gradient Overlays for "Fade" effect at edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-white to-transparent hidden md:block" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-white to-transparent hidden md:block" />
+       
+        <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-linear-to-r from-white to-transparent hidden md:block" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-linear-to-l from-white to-transparent hidden md:block" />
 
         <motion.div
           className="flex gap-8"
           animate={{
-            x: [0, -1920], // Adjust based on total width of one set
+            x: [0, -1920], 
           }}
           transition={{
             x: {
@@ -104,10 +103,10 @@ const WhyChooseUs = () => {
         </motion.div>
       </div>
 
-      {/* --- BOTTOM PROMISE --- */}
+      {/* Bottom */}
       <section className="mt-24 text-center px-6">
         <div className="max-w-2xl mx-auto">
-          <div className="w-12 h-[1px] bg-[#C5A059] mx-auto mb-8" />
+          <div className="w-12 h-px bg-[#C5A059] mx-auto mb-8" />
           <p className="text-lg italic font-light text-gray-400 font-serif">
             "Ensuring every harvest meets the highest standards of the TMR legacy."
           </p>

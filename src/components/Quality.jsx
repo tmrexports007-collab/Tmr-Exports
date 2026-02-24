@@ -23,6 +23,8 @@ const Quality = () => {
               <motion.span 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
+                  viewport={{ once: false,  amount: 0.2}}
+                 transition={{ duration: 1.5, delay: 0.2 }}
                 className="text-[#C5A059] uppercase tracking-[0.6em] text-[10px] font-bold font-sans block mb-8"
               >
                 The Gold Standard
@@ -30,6 +32,8 @@ const Quality = () => {
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false,  amount: 0.2}}
+                transition={{ duration: 1.5, delay: 0.2 }}
                 className="text-6xl md:text-8xl font-light italic text-[#0A2540] leading-[1.1]"
               >
                 Purity Is Our <br /> 
@@ -54,6 +58,8 @@ const Quality = () => {
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: false,  amount: 0.2}}
+                  transition={{ duration: 1.5, delay: 0.2 }}
                 className="aspect-video overflow-hidden bg-gray-100"
               >
                 <img 
