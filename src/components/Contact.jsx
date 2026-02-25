@@ -54,18 +54,18 @@ const Contact = () => {
                     <FaPhoneAlt size={35} className="text-[#004d2c]" />
                   </motion.div>
                   
-                  <h3 className=" text-xl md:text-4xl font-black text-white tracking-tight">TMR AGRO</h3>
+                  <h3 className=" text-xl md:text-4xl font-black text-white tracking-tight">TMR AGRO & MARINE</h3>
                   <div className="w-16 h-1.5 bg-[#468e3d] rounded-full mx-auto"></div>
                 </div>
 
                 <div className="space-y-6 text-white">
                   <div className="flex flex-col items-center gap-2">
                     <FaMapMarkerAlt className="text-[#468e3d] text-xl" />
-                    <p className="text-sm font-medium opacity-90">Nellore Rice Belt, AP, India</p>
+                    <p className="text-sm font-medium opacity-90">Baddevolu (Village), Manubolu (M), Nellore District, AP - 524405</p>
                   </div>
                   
                   <div className="flex flex-col items-center gap-1">
-                    <p className="text-3xl font-black text-white">+91 91544 34281</p>
+                    <p className="text-3xl font-black text-white">+91 96666 54679</p>
                     <p className="text-sm uppercase tracking-[0.4em] text-white font-bold">Available 24/7</p>
                   </div>
 
@@ -110,13 +110,21 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="space-y-1 border-b border-gray-200 focus-within:border-[#468e3d] transition-colors pb-2">
+            
+                
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div className="space-y-1 border-b border-gray-200 focus-within:border-[#468e3d] transition-colors pb-2">
                 <label className="text-base font-bold text-blue-950 uppercase tracking-widest">Email Address</label>
                 <input type="email" placeholder="johndoe@gmail.com" className="w-full bg-transparent border-none outline-none text-gray-800 placeholder:text-gray-200" />
               </div>
-
+                <div className="space-y-1 border-b border-gray-200 focus-within:border-[#468e3d] transition-colors pb-2">
+                  <label className="text-base font-bold text-blue-950 uppercase tracking-widest">Phone Number</label>
+                  <input type="text" placeholder="+91 XXXXX XXXXX" className="w-full bg-transparent border-none outline-none text-gray-800 placeholder:text-gray-200" />
+                </div>
+              </div>
               <div className="space-y-1 border-b border-gray-200 focus-within:border-[#468e3d] transition-colors pb-2">
-                <label className="text-base font-bold text-blue-950 uppercase tracking-widest">Your Message</label>
+                <label className="text-base font-bold text-blue-950 uppercase tracking-widest">Share your requirement</label>
                 <textarea rows="2" placeholder="How can we help?" className="w-full bg-transparent border-none outline-none text-gray-800 placeholder:text-gray-200 resize-none" />
               </div>
 

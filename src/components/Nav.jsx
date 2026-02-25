@@ -13,6 +13,7 @@ const Nav = () => {
     { name: "About", href: "#about" },
     { name: "OurMission", href: "#mission" },
     { name: "Product", href: "#product" },
+    { name: 'Sea Food', href: '#marine' },
     { name: "Quality", href: "#quality" },
     { name: "WhyChooseUs", href: "#why-choose-us" },
     { name: "Contact", href: "#contact" },

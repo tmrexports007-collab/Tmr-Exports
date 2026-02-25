@@ -31,7 +31,7 @@ const Footer = () => {
           <div className="lg:col-span-4 flex flex-col space-y-8">
             <div className="flex items-center gap-3">
               <img src={logo} alt="TMR AGRO" className="h-12 w-12 object-cover grayscale hover:grayscale-0 transition-all duration-500 rounded-full" />
-              <span className="text-2xl font-light tracking-[0.2em] text-[#0A2540]">TMR AGRO</span>
+              <span className="text-lg font-light tracking-[0.2em] text-[#0A2540]">TMR AGRO & MARINE EXPORTS</span>
             </div>
             <p className="text-gray-500 font-sans font-light leading-relaxed text-sm max-w-sm">
               Leading the global market in premium Indian rice exports. We bridge the gap between 
@@ -99,11 +99,11 @@ const Footer = () => {
             <div className="space-y-6 font-sans text-sm text-gray-500">
               <div className="flex items-start gap-4">
                 <FaMapMarkerAlt size={18} className="text-[#C5A059] shrink-0" />
-                <span className="leading-relaxed">Nellore Rice Belt, Andhra Pradesh, India.</span>
+                <span className="leading-relaxed">Baddevolu (V), Manubolu (M), Nellore Dist, AP - 524405</span>
               </div>
               <div className="flex items-center gap-4">
                 <FaPhoneAlt size={18} className="text-[#C5A059] shrink-0" />
-                <span>+91 91544 34281</span>
+                <span>+91 96666 54679</span>
               </div>
               <div className="flex items-center gap-4">
                 <FaRegEnvelope size={18} className="text-[#C5A059] shrink-0" />

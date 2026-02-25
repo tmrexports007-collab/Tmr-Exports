@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { GiPlantSeed, GiGlobe } from 'react-icons/gi';
 import about from "../assets/about.jpg"
 import rice from "../assets/rice.jpg"
-
+import marine from "../assets/marine.jpg"
 const About = () => {
-  
+
   return (
    <section id="about" className="py-16 lg:py-24 overflow-hidden transition-colors duration-1000"
  
@@ -30,10 +30,15 @@ const About = () => {
               Pure Grains, Global Trust
             </h2>
 
-            <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">
-              TMR Agro is a growing rice export company committed to delivering premium-quality Indian rice to international markets.
-              Located in Nellore, one of India’s top rice belts, we work directly with farmers and mills to ensure purity, freshness, and consistent quality.
-            </p>
+          
+            <p className="text-gray-500 text-lg leading-relaxed max-w-2xl">
+  TMR Agro & Marine Exports is a growing rice export company committed to delivering premium-quality Indian rice to international markets. 
+  Located in Nellore, one of India’s top rice belts, we work directly with farmers and mills to ensure purity, freshness, and consistent quality. 
+  <span className="block mt-2">
+    Building on this trust, our marine division now exports premium seafood products, 
+    maintaining the same rigorous standards from the ocean to the global market.
+  </span>
+</p>
 
             {/* Feature List  */}
             <div className="space-y-8 pt-4">
@@ -104,6 +109,24 @@ const About = () => {
             >
               <img src={rice} alt="Rice Bowl" className="w-full h-full object-cover" />
             </motion.div>
+
+
+<motion.div 
+    initial={{ opacity: 0, x: -80 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: false }}
+    animate={{ y: [0, 20, 0] }}
+    transition={{ 
+      y: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+      x: { duration: 0.8, delay: 1 }
+    }}
+    
+    className="absolute right-0 top-5 w-54 h-54 border-4 border-white overflow-hidden shadow-2xl z-0"
+    style={{ borderRadius: "90% 20% 60% 70% / 60% 30% 70% 40% " }}
+  >
+    <img src={marine} alt="Marine Export Ship" className="w-full h-full object-cover" />
+    <div className="absolute inset-0 bg-blue-900/10"></div>
+  </motion.div>
           </div>
 
         </div>
@@ -113,6 +136,8 @@ const About = () => {
 };
 
 export default About;
+
+
 
 
 
