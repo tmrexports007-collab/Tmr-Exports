@@ -108,8 +108,7 @@ const Nav = () => {
       </div>
 
       {/* Mobile Drawer */}
-      <AnimatePresence>
-        {isOpen && (
+      <AnimatePrese
           <>
             <motion.div
               initial={{ opacity: 0 }}
