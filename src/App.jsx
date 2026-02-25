@@ -10,7 +10,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import OurMission from "./components/OurMission";
 import Quality from "./components/Quality";
-
+import Marine from "./components/Marine";
 function AppContent() {
   return (
     <div className="font-serif bg-white">
@@ -19,6 +19,7 @@ function AppContent() {
       <About id="about" />
       <OurMission id="mission" />
       <Products id="product" />
+      <Marine id="marine"/>
       <Quality id="quality" />
       <WhyChooseUs id="why-choose-us" />
       <Contact id="contact" />
