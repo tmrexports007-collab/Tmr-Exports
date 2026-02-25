@@ -61,7 +61,7 @@ const Contact = () => {
                 <div className="space-y-6 text-white">
                   <div className="flex flex-col items-center gap-2">
                     <FaMapMarkerAlt className="text-[#468e3d] text-xl" />
-                    <p className="text-sm font-medium opacity-90">Baddevolu (Village), Manubolu (M), Nellore District, AP - 524405</p>
+                    <p className="text-sm font-medium opacity-90">Baddevolu (village), Manubolu (M), Nellore District - 524405</p>
                   </div>
                   
                   <div className="flex flex-col items-center gap-1">
