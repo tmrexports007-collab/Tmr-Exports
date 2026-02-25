@@ -176,8 +176,13 @@ const Products = () => {
               transition={{ delay: index * 0.1 }}
               className="flex flex-col sm:flex-row gap-8 items-center group cursor-pointer"
             >
-              <div className="w-full sm:w-48 h-64 overflow-hidden  hover:grayscale-0 transition-all duration-700">
-                <img src={rice.image} alt={rice.name} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" />
+              
+               <div className="w-full sm:w-48 h-64 overflow-hidden rounded-tr-[50px] rounded-bl-[50px] transition-all duration-700">
+                <img 
+                  src={rice.image} 
+                  alt={rice.name} 
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000" 
+                />
               </div>
 
               <div className="flex-1">
