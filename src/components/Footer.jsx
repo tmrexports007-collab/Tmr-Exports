@@ -140,6 +140,7 @@ import {
 } from 'react-icons/fa';
 import { HiOutlineArrowUpRight } from 'react-icons/hi2';
 import logo from "../assets/logo.jpeg";
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -150,7 +151,7 @@ const Footer = () => {
       href: "https://www.facebook.com/profile.php?id=61588454324889" 
     },
     { 
-      icon: <FaTwitter size={18} />, 
+      icon: <FaXTwitter size={18} />, 
       href: "https://x.com/TMR_AGRO_MARINE" 
     },
     { 
