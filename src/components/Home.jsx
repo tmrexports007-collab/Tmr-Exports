@@ -1,12 +1,14 @@
 import React, { useEffect, useRef,useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaWhatsapp, FaFileDownload, FaChevronRight } from 'react-icons/fa';
+
 import video from '../assets/video.mp4';
+import thumbnail from '../assets/thumbnail.png'
 
 
 const Home = () => {
  const videoRef = useRef(null);
-
+const [videoReady, setVideoReady] = useState(false);
 
  const containerVariants = {
 hidden: { opacity: 0 },
@@ -40,10 +42,30 @@ staggerChildren: 0.2,
     <section id="home" className="relative h-screen w-full flex items-center overflow-hidden">
 
       {/* Video */}
-<video  ref={videoRef} autoPlay loop muted playsInline className="absolute z-0 w-full h-full object-cover">
-    <source src={video} type="video/mp4" />
+<div className="absolute inset-0 z-0">
+  {/* Poster image — always visible instantly */}
+  <img
+    src={thumbnail}
+    alt="hero"
+    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+      videoReady ? "opacity-0" : "opacity-100"
+    }`}
+  />
 
-      </video>
+  {/* Video */}
+  <video
+    ref={videoRef}
+    autoPlay
+    loop
+    muted
+    playsInline
+    preload="auto"
+    onCanPlay={() => setVideoReady(true)}
+    className="absolute inset-0 w-full h-full object-cover"
+  >
+    <source src={video} type="video/mp4" />
+  </video>
+</div>
 
 
 
