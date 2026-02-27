@@ -96,7 +96,7 @@ const Products = () => {
  
 
    
-    <div id="product" className=" bg-[#FCFAF5] font-serif text-[#1A1A1A]">
+    <div id="product" className=" bg-[#FCFAF5] font-serif text-[#1A1A1A] overflow-hidden">
       
 
        <motion.a

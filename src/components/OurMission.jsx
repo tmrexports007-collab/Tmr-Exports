@@ -66,7 +66,7 @@ const OurMission = () => {
       </section>
 
       {/* --- STRENGTHS SECTION --- */}
-      <section className="bg-[#FCFAF5] py-10 lg:py-20 px-4">
+      <section className="bg-[#FCFAF5] py-10 lg:py-20 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-2xl md:text-5xl font-light italic text-[#0A2540]">Our Strengths</h2>
@@ -97,7 +97,7 @@ const OurMission = () => {
       </section>
 
       {/* --- COMMITMENT STRIP --- */}
-      <section className="lg:py-20 py-10 text-center px-4">
+      <section className="lg:py-20 py-10 text-center px-4 overflow-hidden">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

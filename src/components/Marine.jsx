@@ -77,7 +77,7 @@ const Marine = () => {
       </section>
 
       {/* --- MARINE GALLERY --- */}
-      <section className="max-w-7xl mx-auto py-10 lg:py-20 px-4">
+      <section className="max-w-7xl mx-auto py-10 lg:py-20 px-4 overflow-hidden">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-blue-200 pb-8">
           <motion.div
             initial={{ opacity: 0, x: -30 }}

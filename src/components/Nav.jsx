@@ -56,7 +56,7 @@ const Nav = () => {
   }
  
   return (
-    <nav className="bg-white border-b border-gray-200 sticky top-0 z-[1000]">
+    <nav className="bg-white border-b border-gray-200 sticky top-0 z-[1000] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-[90px]">
  
         {/* Logo */}

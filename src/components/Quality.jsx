@@ -34,7 +34,7 @@ const Quality = () => {
     <div id='quality' className="font-serif">
       
       {/* --- NEW MINIMALIST HEADER SECTION (WHITE) --- */}
-      <section className="bg-white py-10 lg:py-20 px-4">
+      <section className="bg-white py-10 lg:py-20 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-16 items-start">
             
