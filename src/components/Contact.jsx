@@ -6,13 +6,13 @@ import { FaXTwitter } from 'react-icons/fa6';
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 overflow-hidden">
+    <section id="contact" className=" py-10 lg:py-20 overflow-hidden">
       <div className="w-full ">
 
         <div className="flex flex-col lg:flex-row items-stretch min-h-150  overflow-hidden ">
 
           {/* Left Side*/}
-          <div className="w-full lg:w-1/2 relative min-h-125 flex items-center justify-center">
+          <div className="w-full lg:w-1/2 mx-auto relative min-h-125 flex items-center justify-center">
 
             <div className="absolute inset-0">
               <img src={greenField} alt="Rice Field" className="w-full h-full object-cover" />
@@ -21,7 +21,12 @@ const Contact = () => {
 
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              
+              className="relative z-10 flex flex-col items-center justify-center text-center p-8"
+            >
+
+
+              <motion.div initial={{ opacity: 0, y: 20 }}
               whileInView={{
                 opacity: 1,
                 y: [0, -20, 0]
@@ -30,19 +35,14 @@ const Contact = () => {
               transition={{
                 opacity: { duration: 0.8 },
                 y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-              }}
-              className="relative z-10 flex flex-col items-center justify-center text-center p-8"
-            >
-
-
-              <div className="absolute inset-0 z-0 pointer-events-none ">
+              }} className="absolute inset-0 z-0 pointer-events-none ">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8 h-full relative">
                   <FaPhoneAlt
 
-                    className="absolute left-6 lg:left-8 top-1/2 -translate-y-1/2 text-white opacity-20 -rotate-12 w-64 h-64 md:w-95 md:h-95"
+                    className="absolute left-[20%] lg:left-8 top-1/2 -translate-y-1/2 text-white opacity-20 -rotate-12 w-64 h-64 md:w-95 md:h-95"
                   />
                 </div>
-              </div>
+              </motion.div>
 
 
               <div className="relative z-20 space-y-8">

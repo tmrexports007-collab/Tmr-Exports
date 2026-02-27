@@ -39,7 +39,7 @@ const WhyChooseUs = () => {
   const duplicatedAdvantages = [...advantages, ...advantages];
 
   return (
-    <div id='why-choose-us' className="bg-white py-24 font-serif text-[#1A1A1A] overflow-hidden">
+    <div id='why-choose-us' className="bg-white py-10 lg:py-20 font-serif text-[#1A1A1A] overflow-hidden">
       
       {/* Header */}
       <section className="max-w-7xl mx-auto px-6 mb-20">
@@ -51,7 +51,7 @@ const WhyChooseUs = () => {
            transition={{ duration: 1.2, ease: "easeOut" }}
           >
             <span className="text-[#C5A059] uppercase tracking-[0.4em] text-[10px] font-bold">The TMR Standard</span>
-            <h2 className="text-4xl md:text-5xl font-light italic mt-4 text-[#0A2540]">Why Choose TMR Agro?</h2>
+            <h2 className="text-2xl md:text-5xl font-light italic mt-4 text-[#0A2540]">Why Choose TMR Agro?</h2>
           </motion.div>
           <motion.p 
             initial={{ opacity: 0 }}
@@ -94,7 +94,7 @@ const WhyChooseUs = () => {
               <div className="text-[#C5A059] mb-8 inline-block pb-2 border-b border-transparent group-hover:border-[#C5A059] transition-all duration-500">
                 {item.icon}
               </div>
-              <h3 className="text-xl font-medium text-[#0A2540] mb-4 uppercase tracking-wider">{item.title}</h3>
+              <h3 className=" text-base   lg:text-xl font-medium text-[#0A2540] mb-4 uppercase tracking-wider">{item.title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed font-sans font-light">
                 {item.desc}
               </p>

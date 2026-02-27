@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const Marine = () => {
+   const phoneNumber = "919666654679";
+
   const marineProducts = [
     {
       id: 1,
@@ -31,10 +33,10 @@ const Marine = () => {
   ];
 
   return (
-    <div id="marine" className="min-h-screen bg-[#F0F4F8] font-serif text-[#1A1A1A]">
+    <div id="marine" className=" bg-[#F0F4F8] font-serif text-[#1A1A1A]">
       
       {/* --- MARINE HERO --- */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
         <motion.img
           initial={{ opacity: 0, scale: 1.1 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -51,7 +53,7 @@ const Marine = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ delay: 0.3 }}
-            className="uppercase tracking-[0.5em] text-xs mb-4 text-[#7BB9FA]"
+            className="uppercase tracking-[0.5em] text-xs mb-4 text-white"
           >
             Sustainable Oceans
           </motion.p>
@@ -75,7 +77,7 @@ const Marine = () => {
       </section>
 
       {/* --- MARINE GALLERY --- */}
-      <section className="max-w-7xl mx-auto py-24 px-6">
+      <section className="max-w-7xl mx-auto py-10 lg:py-20 px-4">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-blue-200 pb-8">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -91,7 +93,7 @@ const Marine = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.8 }}
-            className="max-w-xs text-gray-500 text-xs leading-relaxed font-sans mt-4 md:mt-0"
+            className="max-w-xs text-gray-500  leading-relaxed font-sans mt-4 md:mt-0"
           >
             From the deep cold waters to your facility, our seafood preserves its nutritional profile through advanced IQF technology.
           </motion.p>
@@ -119,9 +121,16 @@ const Marine = () => {
                 <p className="text-gray-500 text-sm leading-relaxed mb-6 font-sans">
                   {item.desc}
                 </p>
-                <button className="flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-[#2C5282] font-bold group-hover:gap-5 transition-all">
-                  Certifications <ArrowRight className="w-3 h-3" />
-                </button>
+                <a
+  href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    "Hi, I would like to know about your certifications."
+  )}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-[#2C5282] font-bold group-hover:gap-5 transition-all"
+>
+  Certifications <ArrowRight className="w-3 h-3" />
+</a>
               </div>
             </motion.div>
           ))}

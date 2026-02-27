@@ -72,7 +72,7 @@ staggerChildren: 0.2,
 <motion.h1
   variants={itemVariants}
 
-  className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4"
+  className="text-2xl md:text-5xl  font-bold text-white leading-tight mb-4"
 >
  
  Excellence from Land & Sea
@@ -85,7 +85,7 @@ staggerChildren: 0.2,
 >
   A trusted export house from Nellore, delivering high-quality 
   <span className="font-semibold text-white"> Sona Masuri, Basmati, and Ponni rice </span> 
-  alongside premium <span className="font-semibold text-[#468e3d]"> Marine & Seafood products </span> 
+  alongside premium <span className="font-semibold text-white"> Marine & Seafood products </span> 
   to global importers.
 </motion.p>
 

@@ -1,22 +1,42 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Award, Shield, CheckCircle2 } from 'lucide-react';
+import img1 from '../assets/certificate.png'
+import img2 from '../assets/fssai.png'
+import img3 from '../assets/apeda.png'
+import img4 from '../assets/origin.png'
 
 const Quality = () => {
   const certificates = [
-    { name: "FSSAI", subtitle: "Food Safety Standards" },
-    { name: "APEDA", subtitle: "Export Authority" },
-    { name: "Phytosanitary", subtitle: "Plant Health" },
-    { name: "Origin", subtitle: "Authenticity" },
-  ];
+  {
+    name: "FSSAI",
+    subtitle: "Food Safety Standards",
+    logo: img2,
+  },
+  {
+    name: "APEDA",
+    subtitle: "Export Authority",
+    logo: img3,
+  },
+  {
+    name: "Phytosanitary",
+    subtitle: "Plant Health",
+    logo:img1
+  },
+  {
+    name: "Origin",
+    subtitle: "Authenticity",
+    logo: img4,
+  },
+];
 
   return (
     <div id='quality' className="font-serif">
       
       {/* --- NEW MINIMALIST HEADER SECTION (WHITE) --- */}
-      <section className="bg-white py-32 px-6">
+      <section className="bg-white py-10 lg:py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-16 items-start">
             
             {/* Left: Big Statement */}
             <div className="lg:col-span-7">
@@ -25,7 +45,7 @@ const Quality = () => {
                 whileInView={{ opacity: 1 }}
                   viewport={{ once: false,  amount: 0.2}}
                  transition={{ duration: 1.5, delay: 0.2 }}
-                className="text-[#C5A059] uppercase tracking-[0.6em] text-[10px] font-bold font-sans block mb-8"
+                className="text-[#C5A059] uppercase lg:tracking-[0.6em] text-xs lg:text-[10px] font-bold font-sans block mb-8"
               >
                 The Gold Standard
               </motion.span>
@@ -34,7 +54,7 @@ const Quality = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false,  amount: 0.2}}
                 transition={{ duration: 1.5, delay: 0.2 }}
-                className="text-6xl md:text-8xl font-light italic text-[#0A2540] leading-[1.1]"
+                className="text-4xl md:text-7xl font-light italic text-[#0A2540] leading-[1.1]"
               >
                 Purity Is Our <br /> 
                 <span className="text-[#C5A059]">Only</span> Metric.
@@ -43,7 +63,7 @@ const Quality = () => {
 
             {/* Right: Detailed text & Image */}
             <div className="lg:col-span-5 pt-4">
-              <div className="border-l border-gray-100 pl-8 mb-12">
+              <div className="border-l border-gray-100 lg:pl-8 mb-12">
                 <p className="text-gray-500 font-sans text-sm leading-loose uppercase tracking-widest mb-8">
                   Beyond the harvest lies a commitment to perfection. We don't just export rice; we export a legacy of uncompromising quality control.
                 </p>
@@ -74,12 +94,12 @@ const Quality = () => {
       </section>
 
       {/* --- THE BLUE SECTION (YOUR FAVORITE) --- */}
-      <section className="bg-[#0A2540] py-32 text-white overflow-hidden relative">
+      <section className="bg-[#0A2540] py-10 lg:py-20 text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 text-[20rem] font-bold text-white/[0.02] select-none translate-x-1/2 -translate-y-1/4">
           TMR
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
               <Award className="text-[#C5A059] w-12 h-12 mb-8" />
@@ -90,14 +110,30 @@ const Quality = () => {
                 We bridge the gap between Indian heritage and international safety standards. Every bag is accompanied by comprehensive documentation for seamless global entry.
               </p>
               
-              <div className="grid grid-cols-2 gap-8 border-t border-white/10 pt-12">
-                {certificates.map((cert, i) => (
-                  <div key={i}>
-                    <h4 className="text-[#C5A059] text-xs font-bold uppercase tracking-widest mb-1">{cert.name}</h4>
-                    <p className="text-gray-500 text-[10px] uppercase font-sans tracking-widest">{cert.subtitle}</p>
-                  </div>
-                ))}
-              </div>
+             <div className="grid grid-cols-2 gap-8 border-t border-white/10 pt-6 lg:pt-12">
+  {certificates.map((cert, i) => (
+    <div key={i} className="flex flex-col items-start gap-3">
+      
+      {/* Logo */}
+      <img
+        src={cert.logo}
+        alt={cert.name}
+        className="h-15 w-15  object-cover"
+      />
+
+      {/* Text */}
+      <div>
+        <h4 className="text-[#C5A059] text-xs font-bold uppercase tracking-widest mb-1">
+          {cert.name}
+        </h4>
+        <p className="text-gray-500 text-[10px] uppercase font-sans tracking-widest">
+          {cert.subtitle}
+        </p>
+      </div>
+
+    </div>
+  ))}
+</div>
             </div>
 
             <div className="relative">

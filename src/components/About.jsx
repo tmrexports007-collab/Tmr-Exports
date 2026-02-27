@@ -7,11 +7,11 @@ import marine from "../assets/marine.jpg"
 const About = () => {
 
   return (
-   <section id="about" className="py-16 lg:py-24 overflow-hidden transition-colors duration-1000"
+   <section id="about" className="py-10 lg:py-24 overflow-hidden transition-colors duration-1000"
  
  >
   
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Left Side */}
@@ -22,16 +22,16 @@ const About = () => {
             transition={{ duration: 0.8,delay:0.2, ease: "easeInOut" }}
             viewport={{ once: false,amount:0.2 }}
              
-            className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-6"
+            className="flex flex-col items-center  lg:items-start lg:text-left space-y-6"
           >
-            <h3 className='font-extrabold text-[#004d2c]  text-4xl md:text-5xl'>About Us</h3>
+            <h3 className='font-extrabold text-[#004d2c]  text-2xl md:text-5xl'>About Us</h3>
    
-            <h2 className="text-2xl lg:text-3xl font-bold text-[#004d2c] leading-tight">
+            <h2 className="text-lg lg:text-3xl font-bold text-[#004d2c] leading-tight">
               Pure Grains, Global Trust
             </h2>
 
           
-            <p className="text-gray-500 text-lg leading-relaxed max-w-2xl">
+            <p className="text-gray-500  leading-relaxed max-w-2xl">
   TMR Agro & Marine Exports is a growing rice export company committed to delivering premium-quality Indian rice to international markets. 
   Located in Nellore, one of India’s top rice belts, we work directly with farmers and mills to ensure purity, freshness, and consistent quality. 
   <span className="block mt-2">
@@ -48,7 +48,7 @@ const About = () => {
                   <GiPlantSeed /> 
                 </div>
                 <div>
-                  <h4 className="text-[#004d2c] font-normal text-2xl leading-none">Superior Export Quality</h4>
+                  <h4 className="text-[#004d2c] font-normal text-lg lg:text-2xl leading-none">Superior Export Quality</h4>
                 
                 </div>
               </div>
@@ -58,15 +58,15 @@ const About = () => {
                   <GiGlobe />
                 </div>
                 <div>
-                  <h4 className="text-[#004d2c] font-normal text-2xl leading-none">Global Representation</h4>
+                  <h4 className="text-[#004d2c] font-normal text-lg lg:text-2xl leading-none">Global Representation</h4>
                  
                 </div>
               </div>
             </div>
 
           
-            <div className="pt-8">
-              <button className="bg-[#004d2c] text-white rounded-md px-12 py-4 font-bold uppercase cursor-pointer  tracking-widest  transition-colors duration-300">
+            <div className="lg:pt-8 pt-4">
+              <button className="bg-[#004d2c] text-white text-sm lg:text-base rounded-md px-12 py-4 font-bold uppercase cursor-pointer  tracking-widest  transition-colors duration-300">
                 Know More
               </button>
             </div>

@@ -31,7 +31,7 @@ const OurMission = () => {
     <div id='mission' className="bg-white min-h-screen font-serif text-[#1A1A1A]">
       
       {/* --- VISION SECTION --- */}
-      <section className="max-w-7xl mx-auto py-24 px-6">
+      <section className="max-w-7xl mx-auto py-10 lg:py-20 px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
@@ -40,8 +40,8 @@ const OurMission = () => {
               transition={{ delay: 0.2, duration: 0.8 }}
            
           >
-            <span className="text-[#C5A059] uppercase tracking-[0.4em] text-[10px] font-bold">The Future</span>
-            <h2 className="text-4xl md:text-5xl font-light italic mt-4 mb-8 text-[#0A2540]">Our Vision</h2>
+            <span className="text-[#C5A059] uppercase lg:tracking-[0.4em] text-xs lg:text-[10px] font-bold">The Future</span>
+            <h2 className="text-2xl md:text-5xl font-light italic mt-4 mb-8 text-[#0A2540]">Our Vision</h2>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-sans font-light border-l-2 border-[#C5A059] pl-8">
               "To become a global leader in supplying high-quality Indian rice to households, 
               wholesalers, and food industries worldwide, bridging the gap between local 
@@ -59,14 +59,14 @@ const OurMission = () => {
             <img 
               src="https://i.pinimg.com/1200x/f0/00/7b/f0007b68cd8900299c6ef2d79abb950a.jpg" 
               alt="Quality Rice"
-              className="w-full h-full object-cover transition-all duration-1000"
+              className="w-full h-full object-cover rounded-xl transition-all duration-1000"
             />
           </motion.div>
         </div>
       </section>
 
       {/* --- STRENGTHS SECTION --- */}
-      <section className="bg-[#FCFAF5] py-24 px-6">
+      <section className="bg-[#FCFAF5] py-10 lg:py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-3xl md:text-4xl font-light italic text-[#0A2540]">Our Strengths</h2>
@@ -97,15 +97,15 @@ const OurMission = () => {
       </section>
 
       {/* --- COMMITMENT STRIP --- */}
-      <section className="py-20 text-center px-6">
+      <section className="lg:py-20 py-10 text-center px-4">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: false, amount: 0.2 }}
-          className="max-w-3xl mx-auto border border-gray-100 p-12"
+          className="max-w-3xl mx-auto border border-gray-100 p-4 rounded-2xl lg:p-12"
         >
           <h3 className="uppercase tracking-[0.3em] text-[10px] text-gray-400 mb-6">Our Promise</h3>
-          <p className="text-xl italic font-light text-gray-700">
+          <p className="lg:text-xl text-base italic font-light text-gray-700">
             Consistently delivering the finest grains, ensuring every harvest meets the highest 
             standards of the Syed Dreamloom Creative Groups legacy.
           </p>

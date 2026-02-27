@@ -5,6 +5,8 @@ import basmathi from "../assets/basmathi.jpg"
 import ponni from "../assets/ponni.jpg"
 import nonbasmathi from "../assets/nonbasmathi.jpg"
 import sonamasuri from "../assets/sonamasuri.jpg"
+import brownrice from "../assets/brownrice.webp"
+import ir64 from "../assets/ir64.jpg"
 
 import { useInView } from "framer-motion"; 
 import { useRef } from "react"; 
@@ -69,6 +71,18 @@ const Products = () => {
       desc: "High-yield, affordable bulk varieties optimized for the international export markets.",
       image: nonbasmathi,
     },
+    {
+  id: 5,
+  name: "IR64 Parboiled Rice (100% Broken rice)",
+  desc: "Widely exported parboiled rice known for its uniform grains, long shelf life, and excellent cooking stability, ideal for bulk supply and global markets.",
+  image: ir64,
+},
+{
+  id: 6,
+  name: "Brown Rice",
+  desc: "Nutrient-rich whole grain rice with natural bran layers intact, offering a healthy option with a slightly nutty flavor and firm texture.",
+  image:brownrice  ,
+}
   ];
 
   const stats = [
@@ -82,7 +96,7 @@ const Products = () => {
  
 
    
-    <div id="product" className="min-h-screen bg-[#FCFAF5] font-serif text-[#1A1A1A]">
+    <div id="product" className=" bg-[#FCFAF5] font-serif text-[#1A1A1A]">
       
 
        <motion.a
@@ -97,7 +111,7 @@ const Products = () => {
         <FaWhatsapp size={30} />
       </motion.a>
       {/* --- ELEGANT HERO --- */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
         <motion.img
           initial={{ opacity: 0 }}
            whileInView={{ opacity: 1 }}
@@ -139,7 +153,7 @@ const Products = () => {
       </section>
 
       {/* --- MINIMALIST STATS --- */}
-      <section className="bg-white py-16 border-b border-gray-100">
+      <section className="bg-white py-10 lg:py-16 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12">
           {stats.map((stat, i) => (
             <div key={i} className="text-center group">
@@ -155,13 +169,13 @@ const Products = () => {
       </section>
 
       {/* --- PRODUCT GALLERY --- */}
-      <section className="max-w-7xl mx-auto py-24 px-6">
+      <section className="max-w-7xl mx-auto py-10 lg:py-20 px-4">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-gray-200 pb-8">
           <div>
             <h2 className="text-4xl font-light italic text-[#0A2540]">Our Varieties</h2>
             <p className="text-gray-400 mt-2 font-sans text-sm tracking-widest uppercase">Select Export Quality</p>
           </div>
-          <p className="max-w-xs text-gray-500 text-xs leading-relaxed font-sans mt-4 md:mt-0">
+          <p className="max-w-xs text-gray-500  leading-relaxed font-sans mt-4 md:mt-0">
             Sourced from the most fertile regions, our rice undergoes 24 rigorous quality checks before reaching your table.
           </p>
         </div>
@@ -181,7 +195,7 @@ const Products = () => {
                 <img 
                   src={rice.image} 
                   alt={rice.name} 
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000" 
+                  className="w-full h-full  object-cover transform group-hover:scale-110 transition-transform duration-1000" 
                 />
               </div>
 
@@ -195,14 +209,24 @@ const Products = () => {
                 </p>
              
 <div className="flex items-center gap-6 mt-8">
+
   {/* Details Button */}
-  <button className="flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-bold hover:gap-5 transition-all">
+  <a
+    href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      `Hi, I would like more details about ${rice.name}.`
+    )}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-bold hover:gap-5 transition-all"
+  >
     Details <ArrowRight className="w-3 h-3" />
-  </button>
+  </a>
 
   {/* Get Quote Button */}
-  <a 
-    href={`https://wa.me/${phoneNumber}?text=Hi, I would like to get a quote for ${rice.name}.`}
+  <a
+    href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      `Hi, I would like to get a quote for ${rice.name}.`
+    )}`}
     target="_blank"
     rel="noopener noreferrer"
     className="flex items-center gap-2 bg-[#0A2540] text-white px-3 py-2 md:px-5 md:py-2.5 text-[10px] uppercase tracking-[0.1em] font-bold rounded-lg hover:bg-[#C5A059] transition-all duration-300 shadow-sm"
@@ -210,6 +234,7 @@ const Products = () => {
     <MessageSquare className="w-3 h-3" />
     Get Quote
   </a>
+
 </div>
 </div>
             </motion.div>
