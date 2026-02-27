@@ -54,9 +54,9 @@ const Quality = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false,  amount: 0.2}}
                 transition={{ duration: 1.5, delay: 0.2 }}
-                className="text-4xl md:text-7xl font-light italic text-[#0A2540] leading-[1.1]"
+                className="text-2xl md:text-5xl font-light italic text-[#0A2540] leading-[1.1]"
               >
-                Purity Is Our <br /> 
+                Purity Is Our <br className='hidden md:block' /> 
                 <span className="text-[#C5A059]">Only</span> Metric.
               </motion.h2>
             </div>
@@ -64,7 +64,7 @@ const Quality = () => {
             {/* Right: Detailed text & Image */}
             <div className="lg:col-span-5 pt-4">
               <div className="border-l border-gray-100 lg:pl-8 mb-12">
-                <p className="text-gray-500 font-sans text-sm leading-loose uppercase tracking-widest mb-8">
+                <p className="text-gray-500 font-sans text-sm lg:leading-loose uppercase tracking-widest mb-8">
                   Beyond the harvest lies a commitment to perfection. We don't just export rice; we export a legacy of uncompromising quality control.
                 </p>
                 <ul className="space-y-4">

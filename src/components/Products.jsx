@@ -172,8 +172,8 @@ const Products = () => {
       <section className="max-w-7xl mx-auto py-10 lg:py-20 px-4">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-gray-200 pb-8">
           <div>
-            <h2 className="text-4xl font-light italic text-[#0A2540]">Our Varieties</h2>
-            <p className="text-gray-400 mt-2 font-sans text-sm tracking-widest uppercase">Select Export Quality</p>
+            <h2 className=" text-2xl lg:text-5xl font-light italic text-[#0A2540]">Our Varieties</h2>
+            <p className="text-gray-400 mt-2 font-sans text-sm lg:tracking-widest uppercase">Select Export Quality</p>
           </div>
           <p className="max-w-xs text-gray-500  leading-relaxed font-sans mt-4 md:mt-0">
             Sourced from the most fertile regions, our rice undergoes 24 rigorous quality checks before reaching your table.
@@ -201,7 +201,7 @@ const Products = () => {
 
               <div className="flex-1">
                
-                <h3 className="text-2xl font-light text-[#0A2540] mb-3">{rice.name}</h3>
+                <h3 className="text-xl lg:text-2xl font-light text-[#0A2540] mb-3">{rice.name}</h3>
                 
                 
                 <p className="text-gray-500 text-sm leading-relaxed mb-6 font-sans">

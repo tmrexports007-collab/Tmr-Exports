@@ -69,7 +69,7 @@ const OurMission = () => {
       <section className="bg-[#FCFAF5] py-10 lg:py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-4xl font-light italic text-[#0A2540]">Our Strengths</h2>
+            <h2 className="text-2xl md:text-5xl font-light italic text-[#0A2540]">Our Strengths</h2>
             <div className="w-12 h-[1px] bg-[#C5A059] mx-auto mt-6" />
           </div>
 

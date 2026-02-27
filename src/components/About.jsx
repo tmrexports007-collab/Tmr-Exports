@@ -5,8 +5,9 @@ import about from "../assets/about.jpg"
 import rice from "../assets/rice.jpg"
 import marine from "../assets/marine.jpg"
 const About = () => {
-
+const phoneNumber = "919666654679";
   return (
+
    <section id="about" className="py-10 lg:py-24 overflow-hidden transition-colors duration-1000"
  
  >
@@ -65,11 +66,18 @@ const About = () => {
             </div>
 
           
-            <div className="lg:pt-8 pt-4">
-              <button className="bg-[#004d2c] text-white text-sm lg:text-base rounded-md px-12 py-4 font-bold uppercase cursor-pointer  tracking-widest  transition-colors duration-300">
-                Know More
-              </button>
-            </div>
+          <div className="lg:pt-8 pt-4">
+  <a
+    href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      "Hi, I would like to know more about your products and export services."
+    )}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-[#004d2c] text-white text-sm lg:text-base rounded-md px-12 py-4 font-bold uppercase tracking-widest transition-colors duration-300"
+  >
+    Know More
+  </a>
+</div>
           </motion.div>
 
 

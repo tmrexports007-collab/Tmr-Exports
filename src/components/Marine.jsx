@@ -85,8 +85,8 @@ const Marine = () => {
             viewport={{ once: false }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl font-light italic text-[#0A2540]">Marine Exports</h2>
-            <p className="text-blue-400 mt-2 font-sans text-sm tracking-widest uppercase">Pristine Catch • Global Reach</p>
+            <h2 className=" text-2xl lg:text-5xl font-light italic text-right lg:text-right text-[#0A2540]">Marine Exports</h2>
+            <p className="text-blue-400 mt-2 font-sans text-sm lg:tracking-widest uppercase">Pristine Catch • Global Reach</p>
           </motion.div>
           <motion.p 
             initial={{ opacity: 0, x: 30 }}
@@ -117,7 +117,7 @@ const Marine = () => {
                 />
               </div>
               <div className="flex-1">
-                <h3 className="text-2xl font-light text-[#0A2540] mb-3">{item.name}</h3>
+                <h3 className=" text-xl lg:text-2xl font-light text-[#0A2540] mb-3">{item.name}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6 font-sans">
                   {item.desc}
                 </p>
