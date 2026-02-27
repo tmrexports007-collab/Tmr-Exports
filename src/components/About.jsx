@@ -41,32 +41,32 @@ const About = () => {
 </p>
 
             {/* Feature List  */}
-            <div className="space-y-8 pt-4">
+            <div className="space-y-8 w-full  pt-4">
            
               <div className="flex flex-col items-center lg:flex-row lg:items-center gap-5">
                 <div className="bg-[#468e3d] p-4 rounded-full text-white shadow-lg text-3xl">
                   <GiPlantSeed /> 
                 </div>
                 <div>
-                  <h4 className="text-[#004d2c] font-normal text-2xl leading-none">Superior Export</h4>
-                  <p className="text-[#004d2c] font-normal text-2xl">Quality</p>
+                  <h4 className="text-[#004d2c] font-normal text-2xl leading-none">Superior Export Quality</h4>
+                
                 </div>
               </div>
 
-              <div className="flex flex-col items-center lg:flex-row lg:items-center gap-5">
+              <div className="flex flex-col items-center w-full lg:flex-row lg:items-center gap-5">
                 <div className="bg-[#468e3d] p-4 rounded-full text-white shadow-lg text-3xl">
                   <GiGlobe />
                 </div>
                 <div>
-                  <h4 className="text-[#004d2c] font-normal text-2xl leading-none">Global</h4>
-                  <p className="text-[#004d2c] font-normal text-2xl">Representation</p>
+                  <h4 className="text-[#004d2c] font-normal text-2xl leading-none">Global Representation</h4>
+                 
                 </div>
               </div>
             </div>
 
           
             <div className="pt-8">
-              <button className="bg-[#004d2c] text-white rounded-md px-12 py-4 font-bold uppercase cursor-pointer  tracking-widest hover:bg-red-700 transition-colors duration-300">
+              <button className="bg-[#004d2c] text-white rounded-md px-12 py-4 font-bold uppercase cursor-pointer  tracking-widest  transition-colors duration-300">
                 Know More
               </button>
             </div>
