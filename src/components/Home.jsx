@@ -2,8 +2,8 @@ import React, { useEffect, useRef,useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaWhatsapp, FaFileDownload, FaChevronRight } from 'react-icons/fa';
 
-import video from '../assets/video.mp4';
-import thumbnail from '../assets/thumbnail.png'
+import video from '../assets/video (2).mp4';
+import thumbnail from '../assets/thumbnail.webp'
 
 
 const Home = () => {
