@@ -8,7 +8,7 @@ const About = () => {
 const phoneNumber = "919666654679";
   return (
 
-   <section id="about" className="py-10 lg:py-24 overflow-hidden transition-colors duration-1000"
+   <section id="about" className="py-10 lg:py-24 scroll-mt-20 lg:scroll-mt-10 overflow-hidden transition-colors duration-1000"
  
  >
   

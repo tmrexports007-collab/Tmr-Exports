@@ -39,7 +39,7 @@ staggerChildren: 0.2,
 
   return (
 
-    <section id="home" className="relative h-screen w-full flex items-center overflow-hidden">
+    <section id="home" className="relative h-screen scroll-mt-20 lg:scroll-mt-10 w-full flex items-center overflow-hidden">
 
       {/* Video */}
 <div className="absolute inset-0 z-0">

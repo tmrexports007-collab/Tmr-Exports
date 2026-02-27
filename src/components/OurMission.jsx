@@ -28,10 +28,10 @@ const OurMission = () => {
 
 
   return (
-    <div id='mission' className="bg-white min-h-screen font-serif text-[#1A1A1A]">
+    <div id='mission' className="bg-white min-h-screen scroll-mt-20 lg:scroll-mt-10 font-serif text-[#1A1A1A]">
       
       {/* --- VISION SECTION --- */}
-      <section className="max-w-7xl mx-auto py-10 lg:py-20 px-4">
+      <section className="max-w-7xl mx-auto py-10 lg:py-20  px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
@@ -66,7 +66,7 @@ const OurMission = () => {
       </section>
 
       {/* --- STRENGTHS SECTION --- */}
-      <section className="bg-[#FCFAF5] py-10 lg:py-20 px-4 overflow-hidden">
+      <section className="bg-[#FCFAF5] py-10 lg:py-20 scroll-mt-20 lg:scroll-mt-10 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-2xl md:text-5xl font-light italic text-[#0A2540]">Our Strengths</h2>
@@ -97,7 +97,7 @@ const OurMission = () => {
       </section>
 
       {/* --- COMMITMENT STRIP --- */}
-      <section className="lg:py-20 py-10 text-center px-4 overflow-hidden">
+      <section className="lg:py-20 py-10 text-center scroll-mt-20 lg:scroll-mt-10 px-4 overflow-hidden">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

@@ -6,7 +6,7 @@ import { FaXTwitter } from 'react-icons/fa6';
 
 const Contact = () => {
   return (
-    <section id="contact" className=" py-10 lg:py-20 overflow-hidden">
+    <section id="contact" className=" py-10 scroll-mt-20 lg:scroll-mt-10 lg:py-20 overflow-hidden">
       <div className="w-full ">
 
         <div className="flex flex-col lg:flex-row items-stretch min-h-150  overflow-hidden ">

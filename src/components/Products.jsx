@@ -96,7 +96,7 @@ const Products = () => {
  
 
    
-    <div id="product" className=" bg-[#FCFAF5] font-serif text-[#1A1A1A] overflow-hidden">
+    <div id="product" className=" bg-[#FCFAF5] scroll-mt-30 lg:scroll-mt-10 font-serif text-[#1A1A1A] overflow-hidden">
       
 
        <motion.a
@@ -154,7 +154,7 @@ const Products = () => {
 
       {/* --- MINIMALIST STATS --- */}
       <section className="bg-white py-10 lg:py-16 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12">
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 items-end gap-12">
           {stats.map((stat, i) => (
             <div key={i} className="text-center group">
               <h4 className="text-[#C5A059] text-3xl font-light mb-1">
@@ -175,7 +175,7 @@ const Products = () => {
             <h2 className=" text-2xl lg:text-5xl font-light italic text-[#0A2540]">Our Varieties</h2>
             <p className="text-gray-400 mt-2 font-sans text-sm lg:tracking-widest uppercase">Select Export Quality</p>
           </div>
-          <p className="max-w-xs text-gray-500  leading-relaxed font-sans mt-4 md:mt-0">
+          <p className="lg:max-w-xs text-gray-500 text-right lg:text-left leading-relaxed font-sans mt-4 md:mt-0">
             Sourced from the most fertile regions, our rice undergoes 24 rigorous quality checks before reaching your table.
           </p>
         </div>

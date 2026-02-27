@@ -20,30 +20,34 @@ const Nav = () => {
   ]
  
   // ✅ Scroll spy
-  useEffect(() => {
-    const handleScroll = () => {
-      if (isManualScroll.current) return
- 
-      let current = "home"
- 
-      navLinks.forEach((link) => {
-        const id = link.href.replace("#", "")
-        const section = document.getElementById(id)
- 
-        if (section) {
-          const offsetTop = section.offsetTop - 120
-          if (window.scrollY >= offsetTop) {
-            current = id
-          }
-        }
-      })
- 
-      setActiveSection(current)
+ useEffect(() => {
+  const sections = navLinks
+    .map((link) => document.getElementById(link.href.replace("#", "")))
+    .filter(Boolean)
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visibleSection = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+
+      if (visibleSection) {
+        setActiveSection(visibleSection.target.id)
+      }
+    },
+    {
+      root: null,
+      rootMargin: "-40% 0px -50% 0px", // 👈 center detection zone
+      threshold: [0.2, 0.4, 0.6, 0.8],
     }
- 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  )
+
+  sections.forEach((section) => observer.observe(section))
+
+  return () => {
+    sections.forEach((section) => observer.unobserve(section))
+  }
+}, [])
  
   // ✅ Click scroll handler
   const handleClick = (id) => {
@@ -125,7 +129,7 @@ const Nav = () => {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 left-0 h-full w-[280px] bg-white z-[1200] p-8 flex flex-col"
+              className="fixed top-0 left-0 h-screen w-full bg-white z-[1200] p-8 flex flex-col"
             >
               <div className="flex justify-between mb-10">
                 <span className="text-blue-950 font-semibold">MENU</span>

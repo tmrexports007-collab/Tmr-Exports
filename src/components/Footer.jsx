@@ -265,13 +265,28 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-10 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[10px] uppercase tracking-widest text-gray-400 font-sans">
-             © {currentYear} TMR AGRO & MARINE — All Rights Reserved
-          </p>
-          <p className="text-[10px] uppercase tracking-widest text-gray-400 font-sans">
-            Cultivating Excellence, Exporting Trust.
-          </p>
-        </div>
+  
+  <p className="text-[10px] uppercase tracking-widest text-gray-400 font-sans">
+    © {currentYear} TMR AGRO & MARINE — All Rights Reserved 
+  </p>
+
+  <p className="text-[10px] tracking-widest text-gray-500">
+    Crafted by{" "}
+    <a
+      href="https://webzspot.com"   // 👉 replace with your actual domain
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-[#004d2c7e] font-semibold tracking-widest hover:underline"
+    >
+      Webzspot Technologies
+    </a>
+  </p>
+
+  <p className="text-[10px] uppercase tracking-widest text-gray-400 font-sans">
+    Cultivating Excellence, Exporting Trust.
+  </p>
+
+</div>
       </div>
     </footer>
   );
